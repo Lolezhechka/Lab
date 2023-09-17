@@ -13,7 +13,7 @@ int main() {
     diff= pow(10,-1*(k+1));
     num = 1.0;
     realfish = exp(x);
-    while (nead > diff)  {
+    while (abs(nead) > diff)  {
         summ = summ + nead;
         nead = nead*x/num;
         num = num + 1.0;

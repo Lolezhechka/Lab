@@ -14,7 +14,7 @@ int main() {
     num = 1.0;
     realfish = exp(x);
     realdiff = 1;
-    while (realdiff>=diff)  {
+    while (abs(realdiff)>=diff)  {
             summ = summ + nead;
             nead = nead*x/num;
             num = num + 1.0;
