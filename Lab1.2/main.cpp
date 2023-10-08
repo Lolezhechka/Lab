@@ -3,17 +3,17 @@
 #include <cmath>
 using namespace std;
 int main() {
-    double k,x,summ,nead,num,realfish,diff;
-    cout << "Enter the k"; // k - кол-во совпадающих чисел
+    long double k,x,summ,nead,num,realfish,diff;
+    cout << "Enter the k" << endl; // k - кол-во совпадающих чисел
     cin >> k;
-    cout << "Enter the x"; // x - степень, в которую мы возводим экспоненту
+    cout << "Enter the x" << endl; // x - степень, в которую мы возводим экспоненту
     cin >> x;
     summ = 0.0;
     nead = 1.0;
-    diff= pow(10,-1*(k+1));
+    diff= pow(10,-1*(k));
     num = 1.0;
     realfish = exp(x);
-    while (abs(nead) > diff)  {
+    while (abs(nead) >= diff)  {
         summ = summ + nead;
         nead = nead*x/num;
         num = num + 1.0;
