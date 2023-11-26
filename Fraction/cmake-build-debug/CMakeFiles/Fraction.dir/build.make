@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/lolezhechka/Fraction
+CMAKE_SOURCE_DIR = /mnt/c/Studying/GitFlow/Lab/Fraction
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/lolezhechka/Fraction/cmake-build-debug
+CMAKE_BINARY_DIR = /mnt/c/Studying/GitFlow/Lab/Fraction/cmake-build-debug
 
 # Include any dependencies generated for this target.
 include CMakeFiles/Fraction.dir/depend.make
@@ -70,32 +70,32 @@ include CMakeFiles/Fraction.dir/progress.make
 include CMakeFiles/Fraction.dir/flags.make
 
 CMakeFiles/Fraction.dir/main.cpp.o: CMakeFiles/Fraction.dir/flags.make
-CMakeFiles/Fraction.dir/main.cpp.o: /home/lolezhechka/Fraction/main.cpp
+CMakeFiles/Fraction.dir/main.cpp.o: /mnt/c/Studying/GitFlow/Lab/Fraction/main.cpp
 CMakeFiles/Fraction.dir/main.cpp.o: CMakeFiles/Fraction.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/lolezhechka/Fraction/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/Fraction.dir/main.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Fraction.dir/main.cpp.o -MF CMakeFiles/Fraction.dir/main.cpp.o.d -o CMakeFiles/Fraction.dir/main.cpp.o -c /home/lolezhechka/Fraction/main.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/c/Studying/GitFlow/Lab/Fraction/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/Fraction.dir/main.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Fraction.dir/main.cpp.o -MF CMakeFiles/Fraction.dir/main.cpp.o.d -o CMakeFiles/Fraction.dir/main.cpp.o -c /mnt/c/Studying/GitFlow/Lab/Fraction/main.cpp
 
 CMakeFiles/Fraction.dir/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/Fraction.dir/main.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/lolezhechka/Fraction/main.cpp > CMakeFiles/Fraction.dir/main.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/c/Studying/GitFlow/Lab/Fraction/main.cpp > CMakeFiles/Fraction.dir/main.cpp.i
 
 CMakeFiles/Fraction.dir/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Fraction.dir/main.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/lolezhechka/Fraction/main.cpp -o CMakeFiles/Fraction.dir/main.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/c/Studying/GitFlow/Lab/Fraction/main.cpp -o CMakeFiles/Fraction.dir/main.cpp.s
 
 CMakeFiles/Fraction.dir/Fraction.cpp.o: CMakeFiles/Fraction.dir/flags.make
-CMakeFiles/Fraction.dir/Fraction.cpp.o: /home/lolezhechka/Fraction/Fraction.cpp
+CMakeFiles/Fraction.dir/Fraction.cpp.o: /mnt/c/Studying/GitFlow/Lab/Fraction/Fraction.cpp
 CMakeFiles/Fraction.dir/Fraction.cpp.o: CMakeFiles/Fraction.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/lolezhechka/Fraction/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/Fraction.dir/Fraction.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Fraction.dir/Fraction.cpp.o -MF CMakeFiles/Fraction.dir/Fraction.cpp.o.d -o CMakeFiles/Fraction.dir/Fraction.cpp.o -c /home/lolezhechka/Fraction/Fraction.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/c/Studying/GitFlow/Lab/Fraction/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/Fraction.dir/Fraction.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Fraction.dir/Fraction.cpp.o -MF CMakeFiles/Fraction.dir/Fraction.cpp.o.d -o CMakeFiles/Fraction.dir/Fraction.cpp.o -c /mnt/c/Studying/GitFlow/Lab/Fraction/Fraction.cpp
 
 CMakeFiles/Fraction.dir/Fraction.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/Fraction.dir/Fraction.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/lolezhechka/Fraction/Fraction.cpp > CMakeFiles/Fraction.dir/Fraction.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/c/Studying/GitFlow/Lab/Fraction/Fraction.cpp > CMakeFiles/Fraction.dir/Fraction.cpp.i
 
 CMakeFiles/Fraction.dir/Fraction.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Fraction.dir/Fraction.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/lolezhechka/Fraction/Fraction.cpp -o CMakeFiles/Fraction.dir/Fraction.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/c/Studying/GitFlow/Lab/Fraction/Fraction.cpp -o CMakeFiles/Fraction.dir/Fraction.cpp.s
 
 # Object files for target Fraction
 Fraction_OBJECTS = \
@@ -109,7 +109,7 @@ Fraction: CMakeFiles/Fraction.dir/main.cpp.o
 Fraction: CMakeFiles/Fraction.dir/Fraction.cpp.o
 Fraction: CMakeFiles/Fraction.dir/build.make
 Fraction: CMakeFiles/Fraction.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/lolezhechka/Fraction/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable Fraction"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/mnt/c/Studying/GitFlow/Lab/Fraction/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable Fraction"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/Fraction.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -121,6 +121,6 @@ CMakeFiles/Fraction.dir/clean:
 .PHONY : CMakeFiles/Fraction.dir/clean
 
 CMakeFiles/Fraction.dir/depend:
-	cd /home/lolezhechka/Fraction/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/lolezhechka/Fraction /home/lolezhechka/Fraction /home/lolezhechka/Fraction/cmake-build-debug /home/lolezhechka/Fraction/cmake-build-debug /home/lolezhechka/Fraction/cmake-build-debug/CMakeFiles/Fraction.dir/DependInfo.cmake "--color=$(COLOR)"
+	cd /mnt/c/Studying/GitFlow/Lab/Fraction/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /mnt/c/Studying/GitFlow/Lab/Fraction /mnt/c/Studying/GitFlow/Lab/Fraction /mnt/c/Studying/GitFlow/Lab/Fraction/cmake-build-debug /mnt/c/Studying/GitFlow/Lab/Fraction/cmake-build-debug /mnt/c/Studying/GitFlow/Lab/Fraction/cmake-build-debug/CMakeFiles/Fraction.dir/DependInfo.cmake "--color=$(COLOR)"
 .PHONY : CMakeFiles/Fraction.dir/depend
 

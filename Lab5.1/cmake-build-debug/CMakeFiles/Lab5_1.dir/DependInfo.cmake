@@ -8,8 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/mnt/c/Studying/GitFlow/Lab/Fraction/Fraction.cpp" "CMakeFiles/Fraction.dir/Fraction.cpp.o" "gcc" "CMakeFiles/Fraction.dir/Fraction.cpp.o.d"
-  "/mnt/c/Studying/GitFlow/Lab/Fraction/main.cpp" "CMakeFiles/Fraction.dir/main.cpp.o" "gcc" "CMakeFiles/Fraction.dir/main.cpp.o.d"
+  "/mnt/c/Studying/GitFlow/Lab/Lab5.1/main.cpp" "CMakeFiles/Lab5_1.dir/main.cpp.o" "gcc" "CMakeFiles/Lab5_1.dir/main.cpp.o.d"
   )
 
 # Targets to which this target links which contain Fortran sources.

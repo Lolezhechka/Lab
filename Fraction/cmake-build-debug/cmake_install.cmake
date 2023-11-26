@@ -1,4 +1,4 @@
-# Install script for directory: /home/lolezhechka/Fraction
+# Install script for directory: /mnt/c/Studying/GitFlow/Lab/Fraction
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -50,5 +50,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/lolezhechka/Fraction/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/mnt/c/Studying/GitFlow/Lab/Fraction/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

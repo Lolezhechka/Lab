@@ -57,10 +57,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /mnt/c/Studying/GitFlow/Lab/Fraction
+CMAKE_SOURCE_DIR = /mnt/c/Studying/GitFlow/Lab/Lab5.1
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /mnt/c/Studying/GitFlow/Lab/Fraction/cmake-build-debug
+CMAKE_BINARY_DIR = /mnt/c/Studying/GitFlow/Lab/Lab5.1/cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -87,9 +87,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /mnt/c/Studying/GitFlow/Lab/Fraction/cmake-build-debug/CMakeFiles /mnt/c/Studying/GitFlow/Lab/Fraction/cmake-build-debug//CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /mnt/c/Studying/GitFlow/Lab/Lab5.1/cmake-build-debug/CMakeFiles /mnt/c/Studying/GitFlow/Lab/Lab5.1/cmake-build-debug//CMakeFiles/progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /mnt/c/Studying/GitFlow/Lab/Fraction/cmake-build-debug/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /mnt/c/Studying/GitFlow/Lab/Lab5.1/cmake-build-debug/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -117,48 +117,24 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named Fraction
+# Target rules for targets named Lab5_1
 
 # Build rule for target.
-Fraction: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Fraction
-.PHONY : Fraction
+Lab5_1: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Lab5_1
+.PHONY : Lab5_1
 
 # fast build rule for target.
-Fraction/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Fraction.dir/build.make CMakeFiles/Fraction.dir/build
-.PHONY : Fraction/fast
-
-Fraction.o: Fraction.cpp.o
-.PHONY : Fraction.o
-
-# target to build an object file
-Fraction.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Fraction.dir/build.make CMakeFiles/Fraction.dir/Fraction.cpp.o
-.PHONY : Fraction.cpp.o
-
-Fraction.i: Fraction.cpp.i
-.PHONY : Fraction.i
-
-# target to preprocess a source file
-Fraction.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Fraction.dir/build.make CMakeFiles/Fraction.dir/Fraction.cpp.i
-.PHONY : Fraction.cpp.i
-
-Fraction.s: Fraction.cpp.s
-.PHONY : Fraction.s
-
-# target to generate assembly for a file
-Fraction.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Fraction.dir/build.make CMakeFiles/Fraction.dir/Fraction.cpp.s
-.PHONY : Fraction.cpp.s
+Lab5_1/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Lab5_1.dir/build.make CMakeFiles/Lab5_1.dir/build
+.PHONY : Lab5_1/fast
 
 main.o: main.cpp.o
 .PHONY : main.o
 
 # target to build an object file
 main.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Fraction.dir/build.make CMakeFiles/Fraction.dir/main.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Lab5_1.dir/build.make CMakeFiles/Lab5_1.dir/main.cpp.o
 .PHONY : main.cpp.o
 
 main.i: main.cpp.i
@@ -166,7 +142,7 @@ main.i: main.cpp.i
 
 # target to preprocess a source file
 main.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Fraction.dir/build.make CMakeFiles/Fraction.dir/main.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Lab5_1.dir/build.make CMakeFiles/Lab5_1.dir/main.cpp.i
 .PHONY : main.cpp.i
 
 main.s: main.cpp.s
@@ -174,7 +150,7 @@ main.s: main.cpp.s
 
 # target to generate assembly for a file
 main.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Fraction.dir/build.make CMakeFiles/Fraction.dir/main.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Lab5_1.dir/build.make CMakeFiles/Lab5_1.dir/main.cpp.s
 .PHONY : main.cpp.s
 
 # Help Target
@@ -185,10 +161,7 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... Fraction"
-	@echo "... Fraction.o"
-	@echo "... Fraction.i"
-	@echo "... Fraction.s"
+	@echo "... Lab5_1"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

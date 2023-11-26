@@ -7,7 +7,7 @@ set(CMAKE_DEPENDS_GENERATOR "Unix Makefiles")
 # The top level Makefile was generated from the following files:
 set(CMAKE_MAKEFILE_DEPENDS
   "CMakeCache.txt"
-  "/mnt/c/Studying/GitFlow/Lab/Fraction/CMakeLists.txt"
+  "/mnt/c/Studying/GitFlow/Lab/Lab5.1/CMakeLists.txt"
   "CMakeFiles/3.27.7/CMakeCCompiler.cmake"
   "CMakeFiles/3.27.7/CMakeCXXCompiler.cmake"
   "CMakeFiles/3.27.7/CMakeSystem.cmake"
@@ -127,5 +127,5 @@ set(CMAKE_MAKEFILE_PRODUCTS
 
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
-  "CMakeFiles/Fraction.dir/DependInfo.cmake"
+  "CMakeFiles/Lab5_1.dir/DependInfo.cmake"
   )
