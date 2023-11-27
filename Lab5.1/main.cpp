@@ -2,56 +2,61 @@
 #include <iostream>
 #include <vector>
 #include <cstring>
+
 using namespace std;
+
 int main() {
-    ifstream infile1("..\\File1.txt");
-    ifstream infile2("..\\File2.txt");
+    fstream infile1("..\\File1.txt");
+    fstream infile2("..\\File2.txt");
     ofstream onfile3("..\\File3.txt");
-    string buff{};
-    vector <string> File1;
-    vector <string> File2;
-    if (infile1.is_open()) {
-        while (getline(infile1,buff)) {
-            File1.emplace_back(buff);
-        }
+    ifstream infile3("..\\File3.txt");
+    bool b = true;
+    if (!infile1.is_open() || !infile2.is_open()) {
+        throw runtime_error("Unable to open the file");
     }
-    if (infile2.is_open()) {
-        while (getline(infile2,buff)) {
-            File2.emplace_back(buff);
-        }
-    }
+    string buff1;
+    string buff2;
+    infile1.seekg(0, infile1.end);
+    infile2.seekg(0, infile2.end);
+    infile1 << "\n";
+    infile2 << "\n";
+    infile1.seekg(0, infile1.beg);
+    infile2.seekg(0, infile2.beg);
     cout << "File 1:" << endl;
-    for(int j = 0;j < File1.size(); j++) {
-        cout << File1[j] << endl;
+    while (getline(infile1, buff1)) {
+        cout << buff1 << endl;
     }
     cout << "File 2:" << endl;
-    for(int j = 0;j < File2.size(); j++) {
-        cout << File2[j] << endl;
+    while (getline(infile2, buff1)) {
+        cout << buff1 << endl;
     }
-    for (int n2=0; n2 < File2.size();n2++) {
-        char word2 [File2[n2].length() + 1];
-        File2[n2].copy(word2,File2[n2].length() + 1);
-        int n1=0;
-        while (n1 < File1.size()) {
-            char word1 [File1[n1].length() + 1];
-            File1[n1].copy(word1,File1[n1].length() + 1);
-            if (strcmp(word2,word1) == -1) {
-                break;
-            }
-            n1++;
+    infile1.clear();
+    infile2.clear();
+    infile1.seekg(0, infile1.beg);
+    infile2.seekg(0, infile2.beg);
+    string word1, word2;
+    getline(infile1, word1);
+    getline(infile2, word2);
+    while (!infile1.eof() && !infile2.eof()) {
+        if (word2 < word1) {
+            onfile3 << word2 << endl;
+            getline(infile2, word2);
+        } else {
+            onfile3 << word1 << endl;
+            getline(infile1, word1);
         }
-        vector <string>::iterator it =File1.begin() + n1;
-        File1.insert(it,File2[n2]);
     }
-    for (int i = 0; i < File1.size(); i++) {
-        onfile3 << File1[i] << endl;
+    while (!infile1.eof()) {
+        onfile3 << word1 << endl;
+        getline(infile1, word1);
+    }
+    while (!infile2.eof()) {
+        onfile3 << word2 << endl;
+        getline(infile2, word2);
     }
     cout << "File 3:" << endl;
-    for (int i = 0;i < File1.size();i++) {
-        cout << File1[i] << endl;
+    while (getline(infile3, buff1)) {
+        cout << buff1 << endl;
     }
-    infile1.close();
-    infile2.close();
-    onfile3.close();
     return 0;
 }

@@ -1,6 +1,3 @@
-//
-// Created by Loleg on 13.11.2023.
-//
 #include "Fraction.h"
 #include <iostream>
 
@@ -17,77 +14,86 @@ void Fraction::printF() {
         cout << "(" << _a << "/" << _b << ")";
     }
 }
+
 Fraction::Fraction(int valuea, int valueb) {
     if (valueb == 0) {
-        cout << "NONONONO" << endl;
-        valueb = 1;
+        throw runtime_error("0 cant be divergent");
     }
     _a = valuea;
     _b = valueb;
     simp();
 }
+
 Fraction::Fraction(const Fraction &F) {
     this->_a = F._a;
     this->_b = F._b;
 }
+
 int gcd(int a, int b) {
-    if (b < a)
-        swap(a, b);
-    while (a != 0) {
-        int t = b % a;
-        b = a;
-        a = t;
+    int A, B;
+    A = abs(a);
+    B = abs(b);
+    while (A != 0 && B != 0) {
+        if (A >= B) {
+            A = A % B;
+        } else if (B >= A) {
+            B = B % A;
+        }
     }
-    return b;
+    return A + B;
 }
+
 void Fraction::simp() {
-    _a = _a/ gcd(_a,_b);
-    _b = _b/ gcd(_b,_a);
+    int k = gcd(_a, _b);
+    _a = _a / k;
+    _b = _b / k;
 
 }
+
 int Fraction::get_a() {
     return _a;
 };
+
 int Fraction::get_b() {
     return _b;
 };
+
 Fraction Fraction::operator+(Fraction &F) {
-    int A, B;
-    Fraction res(_a * F._b + _b * F._a,_b * F._b);
+    Fraction res(_a * F._b + _b * F._a, _b * F._b);
     res.simp();
     return res;
 }
+
 Fraction Fraction::operator-(Fraction &F) {
-    int A, B;
-    Fraction res(_a * F._b - _b * F._a,_b * F._b);
+    Fraction res(_a * F._b - _b * F._a, _b * F._b);
     res.simp();
     return res;
 }
+
 Fraction Fraction::operator*(Fraction &F) {
-    int A, B;
-    Fraction res(_a * F._a,_b * F._b);
+    Fraction res(_a * F._a, _b * F._b);
     res.simp();
     return res;
 }
+
 Fraction Fraction::operator/(Fraction &F) {
-    int A, B;
     if (F._a == 0) {
-        cout << "NONONONO" << endl;
-        F._a = 1;
+        throw runtime_error("0 cant be divergent");
     }
-    Fraction res(_a * F._b,_b * F._a);
+    Fraction res(_a * F._b, _b * F._a);
     res.simp();
     return res;
 }
-istream& operator>>(istream& in,Fraction& F) {
+
+istream &operator>>(istream &in, Fraction &F) {
     in >> F._a >> F._b;
     if (F._b == 0) {
-        cout << "NONONONO" << endl;
-        F._b= 1;
+        throw runtime_error("0 cant be divergent");
     }
     return in;
 }
-ostream& operator<<(ostream& out,Fraction F) {
+
+ostream &operator<<(ostream &out, Fraction F) {
     if (F._b < 0) {
         F._b = (-1) * F._b;
         F._a = (-1) * F._a;
