@@ -2,12 +2,7 @@
 #include "Class.h"
 using namespace std;
 int main() {
-    Student A("Alex",5,6,123);
-    cout <<A;
-    Student B(A);
-    cout <<B;
-    StudentAft1session C(A,1,2,3,4);
-    cout << C;
+    vector <vector <double> >
     cout << C.get_avgMarkAft1session();
     for (int i=0;i<Groups.size();i++) {
         int Avg=0;

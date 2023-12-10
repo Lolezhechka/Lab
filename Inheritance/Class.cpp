@@ -87,8 +87,6 @@ StudentAft1session::StudentAft1session(Student &F,int a,int b,int c,int d):Stude
     marks[1]=b;
     marks[2]=c;
     marks[3]=d;
-    double avg=(a+b+c+d)/4;
-    Groups[group-1].push_back(avg);
 }
 
 StudentAft1session::StudentAft1session(StudentAft1session &F):Student(name,course,group,number)  {
@@ -101,8 +99,6 @@ StudentAft1session::StudentAft1session(StudentAft1session &F):Student(name,cours
     this->marks[1]=F.marks[1];
     this->marks[2]=F.marks[2];
     this->marks[3]=F.marks[3];
-    double avg=(marks[0]+marks[1]+marks[2]+marks[3])/4;
-    Groups[group-1].push_back(avg);
 }
 
 ostream &operator<<(ostream &out, const StudentAft1session& F) {\
@@ -136,8 +132,6 @@ StudentAft1session::StudentAft1session(string name, int course, int group, int n
     this->marks[1]=b;
     this->marks[2]=c;
     this->marks[3]=d;
-    double avg=(a+b+c+d)/4;
-    Groups[group-1].push_back(avg);
 }
 
 int StudentAft1session::get_1mark() {
@@ -216,8 +210,6 @@ StudentAft2session::StudentAft2session(StudentAft2session &F): StudentAft1sessio
     this->nmarks[2]=F.nmarks[2];
     this->nmarks[3]=F.nmarks[3];
     this->nmarks[4]=F.nmarks[4];
-    double avg=(marks[0]+marks[1]+marks[2]+marks[3]+nmarks[0]+nmarks[1]+nmarks[2]+nmarks[3]+nmarks[4])/9;
-    Groups[group-1].push_back(avg);
 }
 
 StudentAft2session::StudentAft2session(StudentAft1session &F, int a, int b, int c, int d, int e): StudentAft1session(name,course,group,number,marks[0],marks[1],marks[2],marks[3]) {
@@ -235,8 +227,6 @@ StudentAft2session::StudentAft2session(StudentAft1session &F, int a, int b, int 
     this->nmarks[2]=c;
     this->nmarks[3]=d;
     this->nmarks[4]=e;
-    double avg=(marks[0]+marks[1]+marks[2]+marks[3]+a+b+c+d+e)/9;
-    Groups[group-1].push_back(avg);
 }
 
 int StudentAft2session::get_1nmark() {

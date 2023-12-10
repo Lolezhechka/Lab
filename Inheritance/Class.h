@@ -6,7 +6,6 @@
 #include <string>
 #include <vector>
 using namespace std;
-vector <vector <double> >Groups;
 class Student {
 protected:
     int nameSize;

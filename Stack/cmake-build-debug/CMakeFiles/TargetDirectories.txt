@@ -1,0 +1,3 @@
+/mnt/c/Studying/GitFlow/Lab/Stack/cmake-build-debug/CMakeFiles/Stack.dir
+/mnt/c/Studying/GitFlow/Lab/Stack/cmake-build-debug/CMakeFiles/edit_cache.dir
+/mnt/c/Studying/GitFlow/Lab/Stack/cmake-build-debug/CMakeFiles/rebuild_cache.dir
