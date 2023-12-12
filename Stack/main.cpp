@@ -6,9 +6,9 @@ int main() {
     int *a=new int [3]{1,2,3};
 //    Stack A(array);
     Stack<int> C;
-    C << 4;
-    C << 5;
-    C << 6;
+    C << 'a';
+    C << 'b';
+    C << 'c';
     C.print();
     C>>e;
     cout << e << endl;

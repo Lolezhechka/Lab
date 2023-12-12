@@ -8,54 +8,52 @@
 using namespace std;
 class Student {
 protected:
-    int nameSize;
     int course;
     int group;
     const int id;
     int number;
     char* name;
 public:
-    Student(string name, int course, int group, int number);
+    string classname = "Student";
+    virtual double get_avgMarkAft1session(){};
+    virtual double get_avgMarkAft2session(){};
+    Student(char* name, int course, int group, int number);
     Student (const Student &F);
-    int get_course();
+    int get_course() const;
     void set_course(int a);
-    int get_group();
+    int get_group() const;
     void set_group(int a);
     int get_id();
-    int get_number();
-    int get_nameSize() const;
-    char* get_name();
-    void set_name(string name);
+    int get_number() const;
+    char * get_name() const;
+    void set_name(char* name);
     friend ostream& operator<<(ostream& out,Student F);
 };
-class StudentAft1session : protected Student {
+class StudentAft1session :public Student {
 protected:
     int marks[4];
 public:
-    double get_avgMarkAft1session();
-    int get_1mark();
+    string classname = "StudentAft1session";
+    double get_avgMarkAft1session() override;
+    int get_1mark() const;
     void set_1mark(int a);
-    int get_2mark();
+    int get_2mark() const;
     void set_2mark(int b);
-    int get_3mark();
+    int get_3mark() const;
     void set_3mark(int c);
-    int get_4mark();
+    int get_4mark() const;
     void set_4mark(int d);
-    using Student::get_course;
-    using Student::get_group;
-    using Student::get_name;
-    using Student::get_number;
-    using Student::get_nameSize;
-    StudentAft1session(string name, int course, int group, int number,int a,int b,int c,int d);
-    StudentAft1session(StudentAft1session &F);
-    StudentAft1session(Student &F,int a,int b,int c,int d);
+    StudentAft1session(char* name, int course, int group, int number,int a,int b,int c,int d);
+    StudentAft1session(const StudentAft1session &F);
+    StudentAft1session(const Student &F,int a,int b,int c,int d);
     friend ostream& operator<<(ostream& out,const StudentAft1session& F);
 };
-class StudentAft2session : StudentAft1session {
+class StudentAft2session : public StudentAft1session {
 private:
     int nmarks[5];
 public:
-    double get_avgMarkAft2Session();
+    string classname = "StudentAft2session";
+    double get_avgMarkAft2session() override;
     int get_1nmark();
     void set_1nmark(int a);
     int get_2nmark();
@@ -66,8 +64,8 @@ public:
     void set_4nmark(int d);
     int get_5nmark();
     void set_5nmark(int e);
-    StudentAft2session(StudentAft2session &F);
-    StudentAft2session(StudentAft1session &F,int a,int b,int c,int d,int e);
+    StudentAft2session(const StudentAft2session &F);
+    StudentAft2session(const StudentAft1session &F,int a,int b,int c,int d,int e);
     friend ostream& operator<<(ostream& out,StudentAft2session F);
 };
 

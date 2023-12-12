@@ -2,34 +2,29 @@
 #include <iostream>
 #include <string>
 #include <vector>
+#include <cstring>
 using namespace std;
 int l(0);
-Student::Student(string name, int course, int group, int number) : id(l++) {
+Student::Student(char* name, int course, int group, int number) : id(l++) {
     this->course = course;
     this->group = group;
-    this->name =new char[name.size()];
-    for (int i=0;i<name.size();i++) {
-        this->name[i]=name[i];
-    }
+    this->name =new char[strlen(name)];
+    strcpy(this->name,name);
     this->number=number;
-    this->nameSize = name.size();
 }
 Student::Student(const Student &F) : id(l++) {
     this->course = F.course;
     this->group = F.group;
-    this->nameSize=F.nameSize;
     this->number=F.number;
-    this->name = new char[F.nameSize];
-    for (int i=0;i<nameSize;i++) {
-        this->name[i]=F.name[i];
-    }
+    this->name = new char[strlen(F.name)];
+    strcpy(this->name,F.name);
 }
 
-int Student::get_course() {
+int Student::get_course() const {
     return course;
 }
 
-int Student::get_group() {
+int Student::get_group() const {
     return group;
 }
 
@@ -37,28 +32,20 @@ int Student::get_id() {
     return id;
 }
 
-int Student::get_number() {
+int Student::get_number() const {
     return number;
 }
 
-char *Student::get_name() {
+char * Student::get_name() const {
     return name;
 }
-ostream &operator<<(ostream &out, Student F) {\
+ostream &operator<<(ostream &out, Student F) {
     cout << "Id: " << F.id << endl;
-    cout << "Name: ";
-    for(int i=0;i<F.nameSize; i++) {
-        cout << F.name[i];
-    }
-    cout << endl;
+    cout << "Name: " << F.name << endl;
     cout << "Number: " << F.number<<endl;
     cout <<"Group: " << F.group<<endl;
     cout<<"Course: "<<F.course<<endl;
     return out;
-}
-
-int Student::get_nameSize() const {
-    return nameSize;
 }
 
 void Student::set_course(int a) {
@@ -69,32 +56,27 @@ void Student::set_group(int a) {
     this->group=a;
 }
 
-void Student::set_name(string name) {
-    this->name =new char[name.size()];
-    for (int i=0;i<name.size();i++) {
-        this->name[i]=name[i];
-    }
-    this->nameSize = name.size();
+void Student::set_name(char* name) {
+    this->name =new char[strlen(name)];
+    strcpy(this->name,name);
 }
 
-StudentAft1session::StudentAft1session(Student &F,int a,int b,int c,int d):Student(name,course,group,number) {
+StudentAft1session::StudentAft1session(const Student &F,int a,int b,int c,int d):Student(name,course,group,number) {
     this->course = F.get_course();
     this->group = F.get_group();
     this->name = F.get_name();
     this->number=F.get_number();
-    this->nameSize = F.get_nameSize();
     marks[0]=a;
     marks[1]=b;
     marks[2]=c;
     marks[3]=d;
 }
 
-StudentAft1session::StudentAft1session(StudentAft1session &F):Student(name,course,group,number)  {
-    this->course = F.get_course();
-    this->group = F.get_group();
-    this->name =F.get_name();
+StudentAft1session::StudentAft1session(const StudentAft1session &F):Student(name,course,group,number)  {
+    this->course = F.course;
+    this->group = F.group;
+    this->name =F.name;
     this->number=F.number;
-    this->nameSize=F.get_nameSize();
     this->marks[0]=F.marks[0];
     this->marks[1]=F.marks[1];
     this->marks[2]=F.marks[2];
@@ -104,7 +86,7 @@ StudentAft1session::StudentAft1session(StudentAft1session &F):Student(name,cours
 ostream &operator<<(ostream &out, const StudentAft1session& F) {\
     cout << "Id: " << F.id << endl;
     cout << "Name: ";
-    for(int i=0;i<F.nameSize; i++) {
+    for(int i=0;i< strlen(F.name); i++) {
         cout << F.name[i];
     }
     cout << endl;
@@ -119,34 +101,31 @@ ostream &operator<<(ostream &out, const StudentAft1session& F) {\
     return out;
 }
 
-StudentAft1session::StudentAft1session(string name, int course, int group, int number, int a, int b, int c, int d):Student(name,course,group,number) {
+StudentAft1session::StudentAft1session(char* name, int course, int group, int number, int a, int b, int c, int d):Student(name,course,group,number) {
     this->course = course;
     this->group = group;
-    this->name =new char[name.size()];
-    for (int i=0;i<name.size();i++) {
-        this->name[i]=name[i];
-    }
+    this->name =new char[strlen(name)];
+    strcpy(this->name,name);
     this->number=number;
-    this->nameSize = name.size();
     this->marks[0]=a;
     this->marks[1]=b;
     this->marks[2]=c;
     this->marks[3]=d;
 }
 
-int StudentAft1session::get_1mark() {
+int StudentAft1session::get_1mark() const {
     return marks[0];
 }
 
-int StudentAft1session::get_2mark() {
+int StudentAft1session::get_2mark() const {
     return marks[1];
 }
 
-int StudentAft1session::get_3mark() {
+int StudentAft1session::get_3mark() const {
     return marks[2];
 }
 
-int StudentAft1session::get_4mark() {
+int StudentAft1session::get_4mark() const {
     return marks[4];
 }
 
@@ -175,7 +154,7 @@ double StudentAft1session::get_avgMarkAft1session() {
 ostream &operator<<(ostream &out, StudentAft2session F) {\
     cout << "Id: " << F.id << endl;
     cout << "Name: ";
-    for(int i=0;i<F.nameSize; i++) {
+    for(int i=0;i< strlen(F.name); i++) {
         cout << F.name[i];
     }
     cout << endl;
@@ -195,12 +174,11 @@ ostream &operator<<(ostream &out, StudentAft2session F) {\
     return out;
 }
 
-StudentAft2session::StudentAft2session(StudentAft2session &F): StudentAft1session(name,course,group,number,marks[0],marks[1],marks[2],marks[3]) {
-    this->course = F.get_course();
-    this->group = F.get_group();
-    this->name =F.get_name();
+StudentAft2session::StudentAft2session(const StudentAft2session &F): StudentAft1session(name,course,group,number,marks[0],marks[1],marks[2],marks[3]) {
+    this->course = F.course;
+    this->group = F.group;
+    this->name =F.name;
     this->number=F.number;
-    this->nameSize=F.get_nameSize();
     this->marks[0]=F.marks[0];
     this->marks[1]=F.marks[1];
     this->marks[2]=F.marks[2];
@@ -212,12 +190,11 @@ StudentAft2session::StudentAft2session(StudentAft2session &F): StudentAft1sessio
     this->nmarks[4]=F.nmarks[4];
 }
 
-StudentAft2session::StudentAft2session(StudentAft1session &F, int a, int b, int c, int d, int e): StudentAft1session(name,course,group,number,marks[0],marks[1],marks[2],marks[3]) {
+StudentAft2session::StudentAft2session(const StudentAft1session &F, int a, int b, int c, int d, int e): StudentAft1session(name,course,group,number,marks[0],marks[1],marks[2],marks[3]) {
     this->course = F.get_course();
     this->group = F.get_group();
     this->name = F.get_name();
     this->number=F.get_number();
-    this->nameSize = F.get_nameSize();
     this->marks[0]=F.get_1mark();
     this->marks[1]=F.get_2mark();
     this->marks[2]=F.get_3mark();
@@ -269,7 +246,7 @@ void StudentAft2session::set_5nmark(int e) {
     this->nmarks[4]=e;
 }
 
-double StudentAft2session::get_avgMarkAft2Session() {
+double StudentAft2session::get_avgMarkAft2session() {
     double sum;
     sum = marks[0]+marks[1]+marks[2]+marks[3]+nmarks[0]+nmarks[1]+nmarks[2]+nmarks[3]+nmarks[4];
     return (sum/9);
