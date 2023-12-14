@@ -2,10 +2,10 @@
 #include "Stack.h"
 using namespace std;
 int main() {
-    int e;
+    char e;
     int *a=new int [3]{1,2,3};
 //    Stack A(array);
-    Stack<int> C;
+    Stack<char> C;
     C << 'a';
     C << 'b';
     C << 'c';
@@ -13,7 +13,7 @@ int main() {
     C>>e;
     cout << e << endl;
     C.print();
-    Stack<int> D;
+    Stack<char> D;
     D=C;
     C>>e;
     if (D>C) {

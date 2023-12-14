@@ -61,22 +61,21 @@ void Student::set_name(char* name) {
     strcpy(this->name,name);
 }
 
-StudentAft1session::StudentAft1session(const Student &F,int a,int b,int c,int d):Student(name,course,group,number) {
-    this->course = F.get_course();
-    this->group = F.get_group();
-    this->name = F.get_name();
-    this->number=F.get_number();
+char *Student::get_namecopy() const {
+    size_t len = strlen(name);
+    char* new_name = new char[len];
+    strcpy(new_name,name);
+    return new_name;
+}
+
+StudentAft1session::StudentAft1session(const Student &F,int a,int b,int c,int d):Student(F) {
     marks[0]=a;
     marks[1]=b;
     marks[2]=c;
     marks[3]=d;
 }
 
-StudentAft1session::StudentAft1session(const StudentAft1session &F):Student(name,course,group,number)  {
-    this->course = F.course;
-    this->group = F.group;
-    this->name =F.name;
-    this->number=F.number;
+StudentAft1session::StudentAft1session(const StudentAft1session &F):Student(F)  {
     this->marks[0]=F.marks[0];
     this->marks[1]=F.marks[1];
     this->marks[2]=F.marks[2];
@@ -102,11 +101,6 @@ ostream &operator<<(ostream &out, const StudentAft1session& F) {\
 }
 
 StudentAft1session::StudentAft1session(char* name, int course, int group, int number, int a, int b, int c, int d):Student(name,course,group,number) {
-    this->course = course;
-    this->group = group;
-    this->name =new char[strlen(name)];
-    strcpy(this->name,name);
-    this->number=number;
     this->marks[0]=a;
     this->marks[1]=b;
     this->marks[2]=c;
@@ -174,15 +168,7 @@ ostream &operator<<(ostream &out, StudentAft2session F) {\
     return out;
 }
 
-StudentAft2session::StudentAft2session(const StudentAft2session &F): StudentAft1session(name,course,group,number,marks[0],marks[1],marks[2],marks[3]) {
-    this->course = F.course;
-    this->group = F.group;
-    this->name =F.name;
-    this->number=F.number;
-    this->marks[0]=F.marks[0];
-    this->marks[1]=F.marks[1];
-    this->marks[2]=F.marks[2];
-    this->marks[3]=F.marks[3];
+StudentAft2session::StudentAft2session(const StudentAft2session &F): StudentAft1session(F) {
     this->nmarks[0]=F.nmarks[0];
     this->nmarks[1]=F.nmarks[1];
     this->nmarks[2]=F.nmarks[2];
@@ -190,15 +176,7 @@ StudentAft2session::StudentAft2session(const StudentAft2session &F): StudentAft1
     this->nmarks[4]=F.nmarks[4];
 }
 
-StudentAft2session::StudentAft2session(const StudentAft1session &F, int a, int b, int c, int d, int e): StudentAft1session(name,course,group,number,marks[0],marks[1],marks[2],marks[3]) {
-    this->course = F.get_course();
-    this->group = F.get_group();
-    this->name = F.get_name();
-    this->number=F.get_number();
-    this->marks[0]=F.get_1mark();
-    this->marks[1]=F.get_2mark();
-    this->marks[2]=F.get_3mark();
-    this->marks[3]=F.get_4mark();
+StudentAft2session::StudentAft2session(const StudentAft1session &F, int a, int b, int c, int d, int e): StudentAft1session(F) {
     this->nmarks[0]=a;
     this->nmarks[1]=b;
     this->nmarks[2]=c;

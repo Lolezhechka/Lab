@@ -15,8 +15,12 @@ protected:
     char* name;
 public:
     string classname = "Student";
-    virtual double get_avgMarkAft1session(){};
-    virtual double get_avgMarkAft2session(){};
+    virtual double get_avgMarkAft1session(){
+        return 0;
+    };
+    virtual double get_avgMarkAft2session(){
+        return 0;
+    };
     Student(char* name, int course, int group, int number);
     Student (const Student &F);
     int get_course() const;
@@ -26,6 +30,7 @@ public:
     int get_id();
     int get_number() const;
     char * get_name() const;
+    char* get_namecopy() const;
     void set_name(char* name);
     friend ostream& operator<<(ostream& out,Student F);
 };
@@ -34,7 +39,7 @@ protected:
     int marks[4];
 public:
     string classname = "StudentAft1session";
-    double get_avgMarkAft1session() override;
+    double get_avgMarkAft1session();
     int get_1mark() const;
     void set_1mark(int a);
     int get_2mark() const;
@@ -68,5 +73,4 @@ public:
     StudentAft2session(const StudentAft1session &F,int a,int b,int c,int d,int e);
     friend ostream& operator<<(ostream& out,StudentAft2session F);
 };
-
 #endif //INHERITANCE_CLASS_H
