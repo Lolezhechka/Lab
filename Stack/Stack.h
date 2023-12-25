@@ -12,6 +12,16 @@ private:
     int size;
 public:
     Stack():array(nullptr),size(0){};
+    T top () {
+        return array[size-1];
+    }
+    bool is_empty() {
+        if (size==0) {
+            return true;
+        } else {
+            return false;
+        }
+    }
     void print() {
         for (int i(0);i<size;i++) {
             cout << array[i] << " ";

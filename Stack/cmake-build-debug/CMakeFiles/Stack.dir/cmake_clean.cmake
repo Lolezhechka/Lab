@@ -1,4 +1,6 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/Stack.dir/Calc.cpp.o"
+  "CMakeFiles/Stack.dir/Calc.cpp.o.d"
   "CMakeFiles/Stack.dir/main.cpp.o"
   "CMakeFiles/Stack.dir/main.cpp.o.d"
   "Stack"

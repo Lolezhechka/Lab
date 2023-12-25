@@ -1,27 +1,9 @@
+#include "Calc.h"
 #include <iostream>
-#include "Stack.h"
-using namespace std;
+#include <string>
+#include <map>
 int main() {
-    char e;
-    int *a=new int [3]{1,2,3};
-//    Stack A(array);
-    Stack<char> C;
-    C << 'a';
-    C << 'b';
-    C << 'c';
-    C.print();
-    C>>e;
-    cout << e << endl;
-    C.print();
-    Stack<char> D;
-    D=C;
-    C>>e;
-    if (D>C) {
-        D.print();
-    }
-    if (C<D) {
-        D.print();
-    }
-    cout <<D[1];
+    Calculator A("3*(4-8)*2*7*(7/5)");
+    A.Calculate();
     return 0;
 }

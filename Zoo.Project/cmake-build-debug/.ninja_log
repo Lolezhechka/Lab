@@ -1,0 +1,11 @@
+# ninja log v5
+22	5151	7250251483363630	CMakeFiles/Zoo_Project.dir/main.cpp.obj	b462df44a05c121e
+13	3034	7250261085012535	CMakeFiles/Zoo_Project.dir/Date.cpp.obj	dd6841c64c1b0521
+1	3393	7250261088562557	CMakeFiles/Zoo_Project.dir/Animal.cpp.obj	5ecd954bde77d64b
+4	194	7250262754807102	build.ninja	378eed8a316b8ab8
+6	2943	7250268280967858	CMakeFiles/Zoo_Project.dir/AppZoo.cpp.obj	b834ca18e884d459
+1	2890	7250268510328832	CMakeFiles/Zoo_Project.dir/Animal.cpp.obj	5ecd954bde77d64b
+2	3260	7250269399796548	CMakeFiles/Zoo_Project.dir/testAnimal.cpp.obj	22f88abcadc9c433
+1	3023	7250269806993228	CMakeFiles/Zoo_Project.dir/testDate.cpp.obj	69b93ed79d902f6a
+1	2986	7250270063034445	CMakeFiles/Zoo_Project.dir/testDate.cpp.obj	69b93ed79d902f6a
+2	229	7250270596626110	CMakeFiles/Zoo_Project.dir/testAnimal.cpp.obj	22f88abcadc9c433

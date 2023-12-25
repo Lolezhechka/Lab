@@ -4,7 +4,7 @@
 	<Project>
 		<Option title="Stack"/>
 		<Option makefile_is_custom="1"/>
-		<Option compiler="gcc"/>
+		<Option compiler="clang"/>
 		<Option virtualFolders="CMake Files\;"/>
 		<Build>
 			<Target title="all">
@@ -22,12 +22,12 @@
 				<Option working_dir="/mnt/c/Studying/GitFlow/Lab/Stack/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
-				<Option compiler="gcc"/>
+				<Option compiler="clang"/>
 				<Compiler>
-					<Add directory="/usr/include/c++/11"/>
-					<Add directory="/usr/include/x86_64-linux-gnu/c++/11"/>
-					<Add directory="/usr/include/c++/11/backward"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/11/include"/>
+					<Add directory="/usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11"/>
+					<Add directory="/usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/x86_64-linux-gnu/c++/11"/>
+					<Add directory="/usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/backward"/>
+					<Add directory="/usr/lib/llvm-17/lib/clang/17/include"/>
 					<Add directory="/usr/local/include"/>
 					<Add directory="/usr/include/x86_64-linux-gnu"/>
 					<Add directory="/usr/include"/>
@@ -44,12 +44,12 @@
 				<Option working_dir="/mnt/c/Studying/GitFlow/Lab/Stack/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
-				<Option compiler="gcc"/>
+				<Option compiler="clang"/>
 				<Compiler>
-					<Add directory="/usr/include/c++/11"/>
-					<Add directory="/usr/include/x86_64-linux-gnu/c++/11"/>
-					<Add directory="/usr/include/c++/11/backward"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/11/include"/>
+					<Add directory="/usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11"/>
+					<Add directory="/usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/x86_64-linux-gnu/c++/11"/>
+					<Add directory="/usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/backward"/>
+					<Add directory="/usr/lib/llvm-17/lib/clang/17/include"/>
 					<Add directory="/usr/local/include"/>
 					<Add directory="/usr/include/x86_64-linux-gnu"/>
 					<Add directory="/usr/include"/>
@@ -82,6 +82,15 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/mnt/c/Studying/GitFlow/Lab/Stack/Calc.cpp">
+			<Option target="Stack"/>
+		</Unit>
+		<Unit filename="/mnt/c/Studying/GitFlow/Lab/Stack/Calc.h">
+			<Option target="Stack"/>
+		</Unit>
+		<Unit filename="/mnt/c/Studying/GitFlow/Lab/Stack/Stack.h">
+			<Option target="Stack"/>
+		</Unit>
 		<Unit filename="/mnt/c/Studying/GitFlow/Lab/Stack/main.cpp">
 			<Option target="Stack"/>
 		</Unit>
