@@ -333,15 +333,24 @@ class MainGame(QMainWindow):
                 self.input1nickname.setEnabled(False)
                 self.input2nickname.setEnabled(False)
                 self.player2button.setEnabled(False)
-        
+                self.xcolor=saved["colors"]["X"]
+                self.ocolor=saved["colors"]["O"]
                 self.set_next_active_grid(self.active_grid[0],self.active_grid[1])
                 for i in range(3):
                     for j in range(3):
                         self.small_grids[i][j].button1.setText(saved["grids"][i][j]["button1"])
                         self.small_grids[i][j].winner=saved["grids"][i][j]["winner"]
+                        if self.small_grids[i][j].button1.text()=="X":
+                            self.small_grids[i][j].button1.setStyleSheet(f"color:{ self.xcolor}; font-size: 60px;")
+                        if self.small_grids[i][j].button1.text()=="O":
+                            self.small_grids[i][j].button1.setStyleSheet(f"color: {self.ocolor}; font-size: 60px;")
                         for l in range(3):
                             for m in range(3):
                                 self.small_grids[i][j].buttons[l][m].setText(saved["grids"][i][j]["buttons"][l][m])
+                                if self.small_grids[i][j].buttons[l][m].text()=="X":
+                                    self.small_grids[i][j].buttons[l][m].setStyleSheet(f"color:{ self.xcolor}; font-size: 20px;")
+                                if self.small_grids[i][j].buttons[l][m].text()=="O":
+                                    self.small_grids[i][j].buttons[l][m].setStyleSheet(f"color: {self.ocolor}; font-size: 20px;") 
                         if saved["grids"][i][j]["button1"]!="":
                             self.small_grids[i][j].button1.setVisible(True)
                             self.small_grids[i][j].button1.setEnabled(False)
