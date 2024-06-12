@@ -286,6 +286,10 @@ class MainGame(QMainWindow):
 
     def declare_winner(self, winner):
         msg = QMessageBox()
+        if self.nick1=="" :
+            self.nick1="X"
+        if self.nick2=="":
+            self.nick2="O"    
         msg.setText(f"Player {self.nick1 if winner == 'X' else self.nick2} wins!")
         msg.exec()
         self.reset_game()
