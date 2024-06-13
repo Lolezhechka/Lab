@@ -360,6 +360,8 @@ class MainGame(QMainWindow):
         self.input1nickname.setEnabled(True)
         self.input2nickname.setEnabled(True)
         self.player2button.setEnabled(True)
+        self.button_action3.setEnabled(True)
+        self.button_action4.setEnabled(True)
 
     def loadgame(self):
         file_name, _ = QFileDialog.getOpenFileName(self, "Load Game", "", "JSON Files (*.json)")
@@ -367,6 +369,8 @@ class MainGame(QMainWindow):
             with open(file_name, 'r') as file:
                 saved = json.load(file)
                 self.reset_game()
+                self.button_action3.setEnabled(False)
+                self.button_action4.setEnabled(False)
                 self.current_player=saved["player"]
                 self.nick1=saved["nick1"]
                 self.nick2=saved["nick2"]
