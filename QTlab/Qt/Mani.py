@@ -165,20 +165,29 @@ class MainGame(QMainWindow):
         self.set_all_grids_active()
         menu=self.menuBar()
 
-        self.button_action1 = QAction("&Save", self)
+        self.button_action1 = QAction("&Save game state", self)
         self.button_action1.triggered.connect(self.savegame)
 
-        self.button_action2 = QAction("&Load", self)
+        self.button_action2 = QAction("&Load game state", self)
         self.button_action2.triggered.connect(self.loadgame)
 
         self.button_action3=QAction("&Change X colour",self)
         self.button_action3.triggered.connect(self.change_x_color)
+
         self.button_action4=QAction("&Change O colour",self)
         self.button_action4.triggered.connect(self.change_o_color)
+
+        self.button_action5 = QAction("&Save colors", self)
+        self.button_action5.triggered.connect(self.savecolor)
+
+        self.button_action6 = QAction("&Load colors", self)
+        self.button_action6.triggered.connect(self.loadcolor)
 
         file_menu1 = menu.addMenu("&File")
         file_menu1.addAction(self.button_action1)
         file_menu1.addAction(self.button_action2)
+        file_menu1.addAction(self.button_action5)
+        file_menu1.addAction(self.button_action6)
 
         file_menu2 = menu.addMenu("&Style")
         file_menu2.addAction(self.button_action3)
@@ -264,6 +273,41 @@ class MainGame(QMainWindow):
                         self.small_grids[i][j].disable_grid()
         else:
             self.set_all_grids_active()
+    
+    
+    def loadcolor(self) :
+        file_name, _ = QFileDialog.getOpenFileName(self, "Load Game", "", "JSON Files (*.json)")
+        if file_name:
+            with open(file_name, 'r') as file:
+                saved = json.load(file)
+                self.colors=saved["colors"]
+                self.xcolor=saved["colors"]["X"]
+                self.ocolor=saved["colors"]["O"]
+                for i in range(3):
+                    for j in range(3):
+                        if self.small_grids[i][j].button1.text()=="X":
+                            self.small_grids[i][j].button1.setStyleSheet(f"color:{ self.xcolor}; font-size: 60px;")
+                        if self.small_grids[i][j].button1.text()=="O":
+                            self.small_grids[i][j].button1.setStyleSheet(f"color: {self.ocolor}; font-size: 60px;")
+                        for l in range(3):
+                            for m in range(3):
+                                if self.small_grids[i][j].buttons[l][m].text()=="X":
+                                    self.small_grids[i][j].buttons[l][m].setStyleSheet(f"color:{ self.xcolor}; font-size: 20px;")
+                                if self.small_grids[i][j].buttons[l][m].text()=="O":
+                                    self.small_grids[i][j].buttons[l][m].setStyleSheet(f"color: {self.ocolor}; font-size: 20px;") 
+                self.update()                    
+
+    def savecolor(self) :
+        saved = {
+            "colors": self.colors
+        }
+        file_name, _ = QFileDialog.getSaveFileName(self, "Save Game", "", "JSON Files (*.json)")
+        if file_name:
+            with open(file_name, 'w') as file:
+                json.dump(saved, file)                              
+
+
+
 
 
     def switch_player(self):
@@ -324,7 +368,6 @@ class MainGame(QMainWindow):
                 saved = json.load(file)
                 self.reset_game()
                 self.current_player=saved["player"]
-                self.colors=saved["colors"]
                 self.nick1=saved["nick1"]
                 self.nick2=saved["nick2"]
                 self.active_grid=saved["active"] 
@@ -337,8 +380,8 @@ class MainGame(QMainWindow):
                 self.input1nickname.setEnabled(False)
                 self.input2nickname.setEnabled(False)
                 self.player2button.setEnabled(False)
-                self.xcolor=saved["colors"]["X"]
-                self.ocolor=saved["colors"]["O"]
+                self.xcolor=self.colors["X"]
+                self.ocolor=self.colors["O"]
                 self.set_next_active_grid(self.active_grid[0],self.active_grid[1])
                 for i in range(3):
                     for j in range(3):
@@ -369,7 +412,6 @@ class MainGame(QMainWindow):
         saved = {
             "nick1": self.nick1,
             "nick2": self.nick2,
-            "colors": self.colors,
             "player": self.current_player,
             "grids": [[self.gridstate(grid) for grid in row] for row in self.small_grids],
             "active": self.active_grid
